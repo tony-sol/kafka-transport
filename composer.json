@@ -1,0 +1,53 @@
+{
+    "name": "tony-sol/kafka-transport",
+    "type": "library",
+    "description": "Kafka transport implementations",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tony Sol",
+            "email": "tony.kent.nar.earth@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "github",
+            "url": "https://github.com/Tony-Sol/php-rdkafka-stubs"
+        }
+    ],
+    "require": {
+        "php": ">=8.1.0",
+        "ext-redis": "*",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "ext-json": "*",
+        "ext-ffi": "*",
+        "ext-rdkafka": "*",
+        "psr/log": "^1|^2|^3"
+    },
+    "require-dev": {
+        "kwn/php-rdkafka-stubs": "dev-master",
+        "phpunit/phpunit": "^9",
+        "squizlabs/php_codesniffer": "^3",
+        "vimeo/psalm": "^4"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Transport\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": ["vendor/kwn/php-rdkafka-stubs/stubs*"],
+        "files": [
+            "vendor/kwn/php-rdkafka-stubs/stubs/constants.php",
+            "vendor/kwn/php-rdkafka-stubs/stubs/functions.php"
+        ]
+    }
+}
