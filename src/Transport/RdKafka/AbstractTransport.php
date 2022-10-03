@@ -70,7 +70,10 @@ abstract class AbstractTransport
      */
     public function getMetadataByTopic(string $topicName): \RdKafka\Metadata
     {
-        /** @psalm-suppress ArgumentTypeCoercion */
+        /**
+         * @psalm-suppress ArgumentTypeCoercion
+         * @psalm-suppress PossiblyInvalidArgument
+         */
         return $this->getActor()->getMetadata(
             false,
             $this->getActor()->newTopic($topicName),

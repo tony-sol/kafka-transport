@@ -126,6 +126,8 @@ class Consumer extends AbstractTransport implements ReceiverInterface
     /**
      * Get rebalance callback
      *
+     * @phpstan-ignore-next-line
+     *
      * @return \Closure
      */
     private function getRebalanceCb(): \Closure

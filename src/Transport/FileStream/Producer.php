@@ -36,6 +36,7 @@ class Producer extends AbstractTransport implements SenderInterface
         $resource = $this->getResource('ab', $topicName);
         /** @psalm-suppress MissingClosureParamType */
         $producer = function ($resource) use ($topicName): \Generator {
+            /** @phpstan-ignore-next-line */
             while (true) {
                 try {
                     /**

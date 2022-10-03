@@ -31,6 +31,7 @@ class Consumer extends AbstractTransport implements ReceiverInterface
         $resource = $this->getResource('rb', $topicName);
         /** @psalm-suppress MissingClosureParamType */
         $consumer = function ($resource) use ($topicName): \Generator {
+            /** @phpstan-ignore-next-line */
             while (true) {
                 try {
                     /** @var resource $resource */
